@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -17,6 +16,10 @@ export default {
 			screens: {
 				'2xl': '1400px'
 			}
+		},
+		fontFamily: {
+			sans: ['SF Pro', 'system-ui', '-apple-system', 'sans-serif'],
+			heading: ['SF Pro', 'system-ui', '-apple-system', 'sans-serif'],
 		},
 		extend: {
 			colors: {
@@ -125,10 +128,6 @@ export default {
 				'float': 'float 3s ease-in-out infinite',
 				'blur-in': 'blur-in 0.5s ease-out forwards',
 				'enter': 'fade-in 0.3s ease-out, scale-in 0.2s ease-out',
-			},
-			fontFamily: {
-				sans: ['Inter', 'sans-serif'],
-				heading: ['Montserrat', 'sans-serif'],
 			},
 		}
 	},

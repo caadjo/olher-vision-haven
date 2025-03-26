@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { MapPin, Phone, Mail, Clock, Instagram, MessageSquare } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Instagram, Facebook } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 
@@ -31,9 +30,15 @@ const Contact: React.FC = () => {
   const socialLinks = [
     {
       name: "WhatsApp",
-      icon: <MessageSquare className="h-6 w-6" />,
+      icon: <Phone className="h-6 w-6" />,
       link: "https://api.whatsapp.com/send?phone=5544999999999&text=Olá,%20gostaria%20de%20agendar%20uma%20consulta",
       color: "bg-green-500 hover:bg-green-600"
+    },
+    {
+      name: "Facebook",
+      icon: <Facebook className="h-6 w-6" />,
+      link: "https://facebook.com/olherclinica",
+      color: "bg-blue-600 hover:bg-blue-700"
     },
     {
       name: "Instagram",
@@ -53,25 +58,25 @@ const Contact: React.FC = () => {
     <section id="contact" className="py-20 bg-gradient-to-b from-olher-light/30 to-white">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16 max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-olher-dark font-heading mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-olher-dark font-heading mb-4 gradient-text">
             Entre em Contato
           </h2>
           <div className="w-24 h-1 bg-olher-blue mx-auto mb-6"></div>
-          <p className="text-lg text-olher-dark/80">
+          <p className="text-lg text-olher-dark/80 fade-in">
             Estamos prontos para atender você e cuidar da saúde dos seus olhos
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div className="animate-fade-in">
-            <div className="bg-white rounded-xl shadow-md p-8 h-full">
+          <div className="slide-in-left">
+            <div className="bg-white rounded-xl shadow-md p-8 h-full shine-effect">
               <h3 className="text-2xl font-bold text-olher-dark font-heading mb-6">
                 Informações de Contato
               </h3>
 
-              <div className="space-y-6">
+              <div className="space-y-6 stagger-children">
                 {contactInfo.map((info, index) => (
-                  <div key={index} className="flex items-start gap-4">
+                  <div key={index} className="flex items-start gap-4 hover-card rounded-lg p-4">
                     <div className="flex-shrink-0 w-10 h-10 bg-olher-blue/10 rounded-full flex items-center justify-center text-olher-blue">
                       {info.icon}
                     </div>
@@ -87,7 +92,7 @@ const Contact: React.FC = () => {
                 <h3 className="text-xl font-bold text-olher-dark font-heading mb-6">
                   Nossas Redes Sociais
                 </h3>
-                <div className="flex flex-wrap gap-4">
+                <div className="flex flex-wrap gap-4 stagger-children">
                   {socialLinks.map((social, index) => (
                     <a 
                       key={index}
@@ -98,12 +103,12 @@ const Contact: React.FC = () => {
                     >
                       <Button
                         className={cn(
-                          "text-white transition-transform hover:scale-105",
+                          "text-white social-btn",
                           social.color
                         )}
                       >
                         {social.icon}
-                        <span>{social.name}</span>
+                        <span className="ml-2">{social.name}</span>
                       </Button>
                     </a>
                   ))}
@@ -112,12 +117,12 @@ const Contact: React.FC = () => {
             </div>
           </div>
 
-          <div className="animate-slide-in-right">
-            <div className="bg-white rounded-xl shadow-md p-8 h-full">
+          <div className="slide-in-right">
+            <div className="bg-white rounded-xl shadow-md p-8 h-full shine-effect">
               <h3 className="text-2xl font-bold text-olher-dark font-heading mb-6">
                 Localização
               </h3>
-              <div className="rounded-lg overflow-hidden h-[400px] border border-olher-light">
+              <div className="rounded-lg overflow-hidden h-[400px] border border-olher-light hover-card">
                 <iframe 
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3661.3096015737046!2d-51.9379369!3d-23.4103039!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ecd0ecd36841af%3A0xf29aef6e624e1ee9!2sAv.%20Colombo%2C%205790%20-%20Zona%207%2C%20Maring%C3%A1%20-%20PR%2C%2087020-900!5e0!3m2!1spt-BR!2sbr!4v1715705231182!5m2!1spt-BR!2sbr" 
                   width="100%" 
@@ -135,7 +140,7 @@ const Contact: React.FC = () => {
                   target="_blank" 
                   rel="noreferrer"
                 >
-                  <Button variant="outline" className="border-olher-blue text-olher-blue hover:bg-olher-blue/10">
+                  <Button variant="outline" className="border-olher-blue text-olher-blue hover:bg-olher-blue/10 pulse-animation">
                     Como chegar
                   </Button>
                 </a>
