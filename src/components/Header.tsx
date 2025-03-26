@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -20,6 +19,7 @@ const Header: React.FC = () => {
     { title: 'Principal', href: '#home' },
     { title: 'Sobre Nós', href: '#about' },
     { title: 'Serviços', href: '#services' },
+    { title: 'Blog', href: '#blog' },
     { title: 'Contato', href: '#contact' },
   ];
   
